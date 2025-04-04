@@ -139,14 +139,14 @@ const ContentComponent: React.FC = () => {
           )}
           {count < steps.length - 1 ? (
             <button
-              className="mt-4 px-6 py-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition duration-300"
+              className="mt-4 items-end justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition duration-300"
               onClick={() => setCount(count + 1)}
             >
               Next
             </button>
           ) : (
             <button
-              className="mt-4 px-6 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition duration-300"
+              className="mt-4 items-end justify-center rounded-full bg-green-600 text-white hover:bg-green-700 transition duration-300"
               onClick={() => navigate("/Matching-Exercise")} // Navigate to MatchingExercise
             >
               Start Matching Exercise

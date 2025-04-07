@@ -30,7 +30,7 @@ interface LevelProps {
 interface CustomDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  onSelectPart: (part: string) => void;
+  onSelectPart: (part: string, isDemo?: boolean) => void; // Add isDemo param
   isDarkMode: boolean;
 }
 
@@ -178,7 +178,7 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
 
             {/* Part Two Button */}
             <button
-              onClick={() => onSelectPart("two")}
+              onClick={() => onSelectPart("two", true)}
               className={`group relative flex items-center p-4 rounded-xl transition-all duration-300 ${
                 isDarkMode
                   ? "bg-gradient-to-r from-green-900/50 to-lime-800/50 hover:from-green-800 hover:to-lime-700"
@@ -238,10 +238,18 @@ const LevelCard: React.FC<LevelProps & { isDarkMode: boolean }> = ({
     }
   };
 
-  const handleSelectPart = (part: string) => {
-    setShowDialog(false);
-    navigate(part === "one" ? "/Level-Two-Part-One" : "/Level-Two-Part-Two");
-  };
+ const handleSelectPart = (part: string, isDemo?: boolean) => {
+  setShowDialog(false);
+  if (part === "one") {
+    navigate("/Level-Two-Part-One");
+  } else {
+    navigate("/Level-Two-Part-Two", { 
+      state: { 
+        startTour: isDemo || false // Pass demo state
+      } 
+    });
+  }
+};
 
   return (
     <>

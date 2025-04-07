@@ -7,6 +7,7 @@ import { useHighlightedText } from "../context/HighlightedTextContext";
 import { useQuestionType } from "../context/QuestionTypeContext";
 import { ThemeContext } from "../context/ThemeContext";
 import parse, { DOMNode, Element } from "html-react-parser";
+import { useLocation } from 'react-router-dom';
 import Shepherd from 'shepherd.js';
 import 'shepherd.js/dist/css/shepherd.css';
 
@@ -101,6 +102,7 @@ const getBaseDocumentText = (fullText: string): string => {
 
 const Live_Generation = () => {
   const { isDarkMode } = useContext(ThemeContext);
+  const location = useLocation();
   const navigate = useNavigate();
   const { highlightedTexts } = useHighlightedText();
   const { selectedTypes, editedQuestions, requiredQuestions, questionOrder } = useQuestionType();
@@ -141,6 +143,7 @@ const Live_Generation = () => {
   }
 
   useEffect(() => {
+    if (!location.state?.startTour) return;
     const tour = new Shepherd.Tour({
       defaultStepOptions: {
         cancelIcon: { enabled: true },
@@ -186,7 +189,7 @@ const Live_Generation = () => {
     return () => {
       tour.complete();
     };
-  }, []);
+  }, [location.state]);
 
   useEffect(() => {
     const clauses = extractClauses(documentText);

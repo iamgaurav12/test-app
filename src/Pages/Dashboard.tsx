@@ -176,6 +176,32 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
               } group-hover:transform group-hover:translate-x-1 transition-all`} />
             </button>
 
+                {/* Part two [Demo Button] */}
+
+            <button
+              onClick={() => onSelectPart("two" , true)} // Add isDemo=true
+              className={`group relative flex items-center p-4 rounded-xl transition-all duration-300 ${
+                isDarkMode
+                  ? "bg-gradient-to-r from-green-900/50 to-lime-800/50 hover:from-green-800 hover:to-lime-700"
+                  : "bg-gradient-to-r from-green-50 to-green-100 hover:from-lime-100 hover:to-lime-200"
+              }`}
+            >
+              <div className={`${isDarkMode ? "bg-lime-700" : "bg-lime-500"} p-3 rounded-lg`}>
+                <FaPuzzlePiece className="text-white text-xl" />
+              </div>
+              <div className="ml-4 text-left">
+                <h4 className={`text-lg font-semibold ${isDarkMode ? "text-lime-200" : "text-lime-900"}`}>
+                  Part Two [Demo]
+                </h4>
+                <p className={`${isDarkMode ? "text-lime-400" : "text-lime-600"} text-sm`}>
+                  Automate Employment Agreement
+                </p>
+              </div>
+              <FaChevronRight className={`absolute right-4 ${
+                isDarkMode ? "text-lime-400 group-hover:text-lime-300" : "text-lime-400 group-hover:text-lime-600"
+              } group-hover:transform group-hover:translate-x-1 transition-all`} />
+            </button>
+            
             {/* Part Two Button */}
             <button
               onClick={() => onSelectPart("two", true)}
@@ -192,9 +218,6 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
               <div className="ml-4 text-left">
                 <h4 className={`text-lg font-semibold ${isDarkMode ? "text-lime-200" : "text-lime-900"}`}>
                   Part Two
-                </h4>
-                <h4 className={`text-lg font-semibold ${isDarkMode ? "text-lime-200" : "text-lime-900"}`}>
-                  Part Two [Demo]
                 </h4>
                 <p className={`${isDarkMode ? "text-lime-400" : "text-lime-600"} text-sm`}>
                   Automate Employment Agreement

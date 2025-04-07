@@ -193,6 +193,9 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
                 <h4 className={`text-lg font-semibold ${isDarkMode ? "text-lime-200" : "text-lime-900"}`}>
                   Part Two
                 </h4>
+                <h4 className={`text-lg font-semibold ${isDarkMode ? "text-lime-200" : "text-lime-900"}`}>
+                  Part Two [Demo]
+                </h4>
                 <p className={`${isDarkMode ? "text-lime-400" : "text-lime-600"} text-sm`}>
                   Automate Employment Agreement
                 </p>

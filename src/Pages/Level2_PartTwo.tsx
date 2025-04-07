@@ -8,12 +8,13 @@ import { useQuestionType } from "../context/QuestionTypeContext";
 import EmploymentAgreement from "../utils/EmploymentAgreement";
 import { determineQuestionType } from "../utils/questionTypeUtils";
 import { ThemeContext } from "../context/ThemeContext";
+import { useLocation } from 'react-router-dom'; 
 import { useRef } from "react";
 import AIAnalysisPanel from "../components/AIAnalysisPanel";
 // import introJs from "intro.js"   // Modified by Ayush
 // import "intro.js/introjs.css"    // .
 import Shepherd from "shepherd.js";
-import "shepherd.js/dist/css/shepherd.css"
+import "shepherd.js/dist/css/shepherd.css";
 
 const icons = [
   { icon: <FaPenToSquare />, label: "Edit PlaceHolder" },
@@ -24,6 +25,7 @@ const icons = [
 
 const LevelTwoPart_Two = () => {
   const { isDarkMode } = useContext(ThemeContext);
+  const location = useLocation(); 
   const [tooltip, setTooltip] = useState<string | null>(null);
   const { highlightedTexts, addHighlightedText } = useHighlightedText();
   const { selectedTypes } = useQuestionType();
@@ -258,6 +260,7 @@ const LevelTwoPart_Two = () => {
   // }, []);
 
   useEffect(() => {
+    if (!location.state?.startTour) return;
     const tour = new Shepherd.Tour({
       defaultStepOptions: {
         cancelIcon: { enabled: true },
@@ -342,7 +345,7 @@ const LevelTwoPart_Two = () => {
     return () => {
       tour.complete();
     };
-  }, []);
+  }, [location.state]);
   
   
 

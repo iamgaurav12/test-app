@@ -11,7 +11,7 @@ const Terms: React.FC = () => {
           Welcome to Game of Docs: Legal Automation Quest (the "Game"), a gamified legal
           education experience designed to engage lawyers in using legal tech tools such as
           document automation and contract lifecycle management. Game of Docs: Legal Automation
-          Quest is owned and operated by Lawyal Tech ("Lawyal Tech," "us," or "we"). These Terms of
+          Quest is owned and operated by Lawyal Tech ("Lawyal Tech", "we," "us," or "our"). These Terms of
           Service ("Terms") govern your access to and use of the Game. By accessing or using any
           part of the Game, you represent that you have read, understood, and agree to be bound by
           these Terms and Conditions including any future modifications. If you do not agree, you must
@@ -45,7 +45,12 @@ const Terms: React.FC = () => {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">2. Acceptable Use & Restrictions</h2>
         <div className="ml-4">
-          <h3 className="text-lg font-semibold">General Use:</h3>
+          <h3 className="text-lg font-semibold">Content Sharing and Recording Restrictions:</h3>
+          <ul className="list-disc list-inside ml-4 text-gray-700">
+            <li>You agree not to record, screenshot, reproduce, or publicly share the Game's answers, walkthroughs, or internal learning content, including but not limited to posting on platforms such as YouTube, without prior written consent from Lawyal Tech. Unauthorized sharing of this nature may result in termination of access and potential legal action under applicable intellectual property laws. We reserve the right to issue takedown notices and enforce our rights in case of violation.</li>
+          </ul>
+          
+          <h3 className="text-lg font-semibold mt-4">General Use:</h3>
           <ul className="list-disc list-inside ml-4 text-gray-700">
             <li>You agree to use the Game solely for its intended educational purposes and as permitted by this Agreement and in compliance with all applicable laws. If you use the Game in breach of the Agreement or applicable laws, we may terminate your account and/or suspend your use of the Game.</li>
           </ul>
